@@ -20,7 +20,7 @@ TIMESTAMP=`date --iso-8601=seconds`
 IDENTIFIER=`pwgen -n 5`
 
 # Write data to a LIST File
-echo "$IDENTIFIER,$MAJOR, $ORIGIN, $COLOR, $FOOD, $RATING, $TIMESTAMP" > ./response.list
+echo "$IDENTIFIER,$MAJOR, $ORIGIN, $COLOR, $FOOD, $RATING, $TIMESTAMP" >> ./response.list
 
 # Convert LIST file to a CSV
 paste -d, -s response.list > response.csv
