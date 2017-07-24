@@ -17,6 +17,9 @@ echo "From 1-5, how do you rate pizza?"
 read RATING
 
 TIMESTAMP=`date --iso-8601=seconds`
-echo "$MAJOR, $ORIGIN, $COLOR, $FOOD, $RATING, $TIMESTAMP"
 
-cat $RESPONSE > data-handling-assignment/response.list
+# Write data to a LIST File
+echo "$MAJOR, $ORIGIN, $COLOR, $FOOD, $RATING, $TIMESTAMP" >> ./response.list
+
+# Convert LIST file to a CSV
+paste -d, -s response.list > response.csv
