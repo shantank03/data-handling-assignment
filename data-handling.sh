@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# BEGIN SURVEY QUESTIONS
 # Question 1
 echo "What is your area of study?"
 read MAJOR
