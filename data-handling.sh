@@ -16,5 +16,7 @@ read FOOD
 echo "From 1-5, how do you rate pizza?"
 read RATING
 
-echo "$MAJOR, $ORIGIN, $COLOR, $FOOD, $RATING"
-paste -d, -s response.list
+TIMESTAMP=`date --iso-8601=seconds`
+echo "$MAJOR, $ORIGIN, $COLOR, $FOOD, $RATING, $TIMESTAMP"
+
+cat $RESPONSE > data-handling-assignment/response.list
