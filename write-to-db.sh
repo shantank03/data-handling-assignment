@@ -6,7 +6,7 @@ PASSWORD=changethis
 
 # Set up Database and Table information
 MYDATABASE=coursesurvey
-MYTABLE=tblSurveyResponses
+MYTABLE=tblResponses
 
 # Copy data into MySQL Secure directory
 sudo cp ./response.csv /var/lib/mysql-files/
@@ -27,7 +27,7 @@ if [ "$TBLCHECK" == "$MYTABLE" ]; then
    echo "Table exists"
 else
    echo "Table does not exist. Creating table..."
-   mysql -u"$USERNAME" -p"$PASSWORD" -e "CREATE TABLE $MYTABLE (Identifier VARCHAR(255), Major VARCHAR(255), Origin VARCHAR(255), Color VARCHAR(255), Food VARCHAR(255), Rating INT, Timestamp TIMESTAMP; ALTER TABLE $MYTABLE ADD PRIMARY KEY (Identifier);" $MYDATABASE
+   mysql -u"$USERNAME" -p"$PASSWORD" -e "CREATE TABLE $MYTABLE (Identifier VARCHAR(255), Major VARCHAR(255), Origin VARCHAR(255), Color VARCHAR(255), Food VARCHAR(255), Rating INT, Timestamp TIMESTAMP); ALTER TABLE $MYTABLE ADD PRIMARY KEY (Identifier);" $MYDATABASE
 fi
 
 # Write data from tmp.csv into database table
