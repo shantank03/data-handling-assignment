@@ -27,7 +27,7 @@ if [ "$TBLCHECK" == "$MYTABLE" ]; then
    echo "Table exists"
 else
    echo "Table does not exist. Creating table..."
-   mysql -u"$USERNAME" -p"$PASSWORD" -e "CREATE TABLE $MYTABLE (Identifier VARCHAR(255), Date TIMESTAMP, Major VARCHAR(255), Origin VARCHAR(255), Color VARCHAR(255), Food VARCHAR(255), Rating NUMERIC(1); ALTER TABLE $MYTABLE ADD PRIMARY KEY (IDENTIFIER);" $MYDATABASE
+   mysql -u"$USERNAME" -p"$PASSWORD" -e "CREATE TABLE $MYTABLE (Identifier VARCHAR(255), Major VARCHAR(255), Origin VARCHAR(255), Color VARCHAR(255), Food VARCHAR(255), Rating INT, Timestamp INT; ALTER TABLE $MYTABLE ADD PRIMARY KEY (Identifier);" $MYDATABASE
 fi
 
 # Write data from tmp.csv into database table
