@@ -16,4 +16,4 @@ cp ./*.csv $TEMPDIR/
 cat $TEMPDIR/*.csv > ./compiled-data.csv
 
 # clean up
-rm -r $TEMPDIR
+# rm -r $TEMPDIR
