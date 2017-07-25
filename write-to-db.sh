@@ -27,7 +27,7 @@ if [ "$TBLCHECK" == "$MYTABLE" ]; then
    echo "Table exists"
 else
    echo "Table does not exist. Creating table..."
-   mysql -u"$USERNAME" -p"$PASSWORD" -e "CREATE TABLE $MYTABLE (IDENTIFIER VARCHAR(255), Date TIMESTAMP, Major VARCHAR(255), Origin VARCHAR(255), Color VARCHAR(255), Food VARCHAR(255), Rating NUMERIC(1); ALTER TABLE $MYTABLE ADD PRIMARY KEY (IDENTIFIER);" $MYDATABASE
+   mysql -u"$USERNAME" -p"$PASSWORD" -e "CREATE TABLE $MYTABLE (Identifier VARCHAR(255), Date TIMESTAMP, Major VARCHAR(255), Origin VARCHAR(255), Color VARCHAR(255), Food VARCHAR(255), Rating NUMERIC(1); ALTER TABLE $MYTABLE ADD PRIMARY KEY (IDENTIFIER);" $MYDATABASE
 fi
 
 # Write data from tmp.csv into database table
@@ -37,16 +37,6 @@ echo "Data written successfully."
 # Dump current version of database into export file
 echo "Survey data dumped to file `date --iso-8601`-$MYDATABASE.sql"
 mysqldump -u"$USERNAME" -p"$PASSWORD" $MYDATABASE > `date --iso-8601`-$MYDATABASE.sql
-# Writing a temporary directory
-TEMPDIR="./temp"
 
-# Make temp directory
-mkdir $TEMPDIR/
-# Copy all CSV files into directory
-cp ./*.csv $TEMPDIR/
-
-# concatenate all data
-cat $TEMPDIR/*.csv > ./compiled-data.csv
-
-# clean up
-rm -r $TEMPDIR
+# remove file in sql directory
+sudo rm /var/lib/mysql-files/response.csv
