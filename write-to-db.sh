@@ -13,7 +13,7 @@ cp ./*.csv $TEMPDIR/
 # Create a new csv with variables in a header row
 # echo "$VARNAMES" > $TEMPDIR/00varheader.csv
 # concatenate all data
-cat $TEMPDIR/*.csv > ./compiled-data.csv
+cat $TEMPDIR/*.csv >> ./compiled-data.csv
 
 # clean up
-# rm -r $TEMPDIR
+rm -r $TEMPDIR
