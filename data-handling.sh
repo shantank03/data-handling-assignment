@@ -27,4 +27,9 @@ echo "$IDENTIFIER,$MAJOR,$ORIGIN,$COLOR,$FOOD,$RATING,$TIMESTAMP" >> ./response.
 # Write data to a database
 # bash ./write-to-db.sh
 
-# Access MySQL
+# Set MySQL Credentials
+USERNAME=root
+PASSWORD=changethis
+LOCATION=/var/lib/mysql-files
+cp ./response.csv $LOCATION
+mysql -u USERNAME --password="$PASSWORD" 
