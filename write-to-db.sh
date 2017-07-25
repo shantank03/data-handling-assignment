@@ -1,3 +1,20 @@
+#!/bin/bash
+
+# Set MySQL Credentials
+USERNAME=root
+PASSWORD=changethis
+LOCATION=/var/lib/mysql-files/
+
+# Set up Database and Table information
+MYDATABASE=coursesurvey
+MYTABLE=tblSurveyResponses
+
+# Copy data into MySQL
+sudo cp ./response.csv $LOCATION
+
+mysql -u USERNAME --password="$PASSWORD" 
+
+
 # Writing a temporary directory
 TEMPDIR="./temp"
 

@@ -24,12 +24,9 @@ IDENTIFIER=`pwgen -n 5`
 # Write data to a LIST File
 echo "$IDENTIFIER,$MAJOR,$ORIGIN,$COLOR,$FOOD,$RATING,$TIMESTAMP" >> ./response.csv
 
+# Read out whatever is in the response file
+cat ./response.csv
+
 # Write data to a database
 # bash ./write-to-db.sh
 
-# Set MySQL Credentials
-USERNAME=root
-PASSWORD=changethis
-LOCATION=/var/lib/mysql-files
-cp ./response.csv $LOCATION
-mysql -u USERNAME --password="$PASSWORD" 
