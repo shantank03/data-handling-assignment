@@ -39,7 +39,7 @@ CREATE TABLE `tblSurveyResponses` (
 
 LOCK TABLES `tblSurveyResponses` WRITE;
 /*!40000 ALTER TABLE `tblSurveyResponses` DISABLE KEYS */;
-INSERT INTO `tblSurveyResponses` VALUES ('yook1','Psychology','Apex','Indigo','Collard Greens',4,2017);
+INSERT INTO `tblSurveyResponses` VALUES ('yook1','Psychology','Apex','Indigo','Collard Greens',4,2017),('ohd7u','Biology','Helsinki','Turtle Green','Chips',3,2017),('aez5p','Economics','Cary','Blue','Pasta',5,2017);
 /*!40000 ALTER TABLE `tblSurveyResponses` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-25 14:13:22
+-- Dump completed on 2017-07-25 14:32:09
