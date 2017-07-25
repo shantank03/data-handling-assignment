@@ -3,22 +3,22 @@
 # Set MySQL Credentials
 USERNAME=root
 PASSWORD=changethis
-LOCATION=/var/lib/mysql-files/
 
 # Set up Database and Table information
 MYDATABASE=coursesurvey
 MYTABLE=tblSurveyResponses
 
-# Copy data into MySQL
-sudo cp ./response.csv $LOCATION
+# Copy data into MySQL Secure directory
+sudo cp ./response.csv /var/lib/mysql-files/
 
 # Check for the Database and create if it does not exist
+echo "Searching for Database"
 DBCHECK=`mysql -u"$USERNAME" -p"$PASSWORD" -e "SHOW DATABASES;" | grep -Fo $MYDATABASE`
-if [ "$DBCHECK" == "$MYDATABASE"]; then
+if [ "$DBCHECK" == "$MYDATABASE" ]; then
   echo "Database exists"
 else
   echo "Database not created. Creating database..."
-  mysql -u"$USERNAME" -p"$PASSWORD" -e "CREATE DATABASE $MYDATABASE"
+  mysql -u"$USERNAME" -p"$PASSWORD" -e "CREATE DATABASE $MYDATABASE;"
 fi
 
 # Check for TABLE and create if it does not exists

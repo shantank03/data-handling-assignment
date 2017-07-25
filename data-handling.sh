@@ -30,3 +30,8 @@ cat ./response.csv
 # Write data to a database
 bash ./write-to-db.sh
 
+# Create a backup file for the data
+cat ./response.csv >> data-backup.csv
+
+# Remove the response file
+rm response.csv
