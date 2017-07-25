@@ -2,16 +2,16 @@
 TEMPDIR="./temp"
 
 # Specify Variable Names
-VARNAMES="IDENTIFIER,MAJOR,ORIGIN,COLOR,FOOD,RATING,TIMESTAMP"
+# VARNAMES="IDENTIFIER,MAJOR,ORIGIN,COLOR,FOOD,RATING,TIMESTAMP"
 
 # Make temp directory
 mkdir $TEMPDIR/
 # Copy all CSV files into directory
 cp ./*.csv $TEMPDIR/
 
-echo "$VARNAMES"
+# echo "$VARNAMES"
 # Create a new csv with variables in a header row
-paste "$VARNAMES" $TEMPDIR/00varheader.csv
+# echo "$VARNAMES" > $TEMPDIR/00varheader.csv
 # concatenate all data
 cat $TEMPDIR/*.csv > ./compiled-data.csv
 
