@@ -28,5 +28,5 @@ echo "$IDENTIFIER,$MAJOR,$ORIGIN,$COLOR,$FOOD,$RATING,$TIMESTAMP" >> ./response.
 cat ./response.csv
 
 # Write data to a database
-# bash ./write-to-db.sh
+bash ./write-to-db.sh
 
