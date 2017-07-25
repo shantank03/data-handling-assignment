@@ -22,7 +22,9 @@ TIMESTAMP=`date --iso-8601=seconds`
 IDENTIFIER=`pwgen -n 5`
 
 # Write data to a LIST File
-echo "$IDENTIFIER,$MAJOR,$ORIGIN,$COLOR,$FOOD,$RATING,$TIMESTAMP" > ./response.csv
+echo "$IDENTIFIER,$MAJOR,$ORIGIN,$COLOR,$FOOD,$RATING,$TIMESTAMP" >> ./response.csv
 
 # Write data to a database
 bash ./write-to-db.sh
+
+# Access MySQL
