@@ -28,7 +28,11 @@ echo "$IDENTIFIER,$MAJOR,$ORIGIN,$COLOR,$FOOD,$RATING,$TIMESTAMP" >> ./response.
 cat ./response.csv
 
 # Write data to a database
-bash ./write-to-db.sh
+# bash ./write-to-db.sh
+
+# Alternate direction - Goes to a script without conditional statements to check for exisiting databases
+# However, this will tell you that the scripted database and table exist so you would have to delete the creation phase and let the script input the data
+bash ./alternate-script.sh
 
 # Create a backup file for the data
 cat ./response.csv >> data-backup.csv
